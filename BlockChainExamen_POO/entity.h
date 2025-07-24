@@ -13,7 +13,6 @@ public:
 	entity(std::string addr) :
 		address(addr)
 	{
-		generateKey();
 	}
 
 	std::string returnAddr();

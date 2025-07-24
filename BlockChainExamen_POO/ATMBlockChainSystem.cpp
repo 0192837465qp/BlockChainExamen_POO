@@ -20,6 +20,7 @@ void ATMBlockChainSystem::processEntity(std::string entityFilename)
 	{
 		entity wallet(addr);
 		this->ent.push_back(wallet);
+		wallet.generateKey();
 	}
 	file.close();
 }
@@ -59,6 +60,7 @@ Cblock ATMBlockChainSystem::processTransactionBlock(std::string blkTrs,node nod)
 			}
 		}
 		transaction newTansaction(addr1, addr2, key, value);
+		newTansaction.calculSumaControl();
 		transactionList.push_back(newTansaction);
 	}
 	Cblock newBlock(transactionList);

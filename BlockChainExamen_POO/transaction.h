@@ -12,11 +12,12 @@ private:
 	int comission;
 	int sumaControl;
 public:
-	transaction(std::string addrSenderaddrSender, std::string addrReceiver, std::string senderKey, int val) :
+	transaction(std::string addrSender, std::string addrReceiver, std::string senderKey, int val) :
 		addrSender(addrSender), addrReceiver(addrReceiver), senderKey(senderKey), value(val) {
 		comission = int(value / 100);
-		sumaControl = (stoi(addrSender) + stoi(addrReceiver) + val + (comission)) % (stoi(senderKey));
 	}
 	void printInfo()override;
+	void calculSumaControl()override;
+
 };
 

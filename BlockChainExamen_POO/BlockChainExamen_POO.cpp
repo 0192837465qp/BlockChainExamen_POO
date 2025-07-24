@@ -4,9 +4,10 @@
 int main()
 {
     ATMBlockChainSystem system;
-    
-    system.processTansactions("transactions.txt");
-    system.processEntity("entity.txt");
+
+    system.processEntity("entity.txt");              
+    system.createNodesAndWorkers("nodes.txt");       
+    system.processTansactions("transactions.txt");  
+
     return 0;
 }
-
