@@ -18,12 +18,14 @@ private:
 	std::vector<node>nodes;
 public:
 	ATMBlockChainSystem(){}
+	//1
 	void processEntity(std::string entityFilename)override;
+	//2
 	void processTansactions(std::string transactionsFilename)override;
-	void processTransactionBlock(std::string blkTrs)override;
+	Cblock processTransactionBlock(std::string blkTrs, node nod)override;
 	void createNodesAndWorkers(std::string nodeFile)override;
 	void createindividualNode(node& newNode, std::string nodeNumFilename)override;
 	node calculateNodeToRoute()override;
-	//void sendCoins(entity sender, entity receiver)override;
+	
 };
 

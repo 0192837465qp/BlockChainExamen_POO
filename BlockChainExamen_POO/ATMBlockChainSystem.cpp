@@ -30,20 +30,39 @@ void ATMBlockChainSystem::processTansactions(std::string transactionsFilename)
 	std::string filsedescriptor;
 	while (file >> filsedescriptor)
 	{
-		processTransactionBlock(filsedescriptor);
-		//1
+		node newNode = calculateNodeToRoute();
+		Cblock bloc=processTransactionBlock(filsedescriptor, newNode);
+		std::cout << "Node:" << std::endl;
+		newNode.printInfo();
+		
+		this->instance.addBlockToBlockchain(bloc);
+		bloc.printInfo();
+
 	}
 }
 
-void ATMBlockChainSystem::processTransactionBlock(std::string blkTrs)
+Cblock ATMBlockChainSystem::processTransactionBlock(std::string blkTrs,node nod)
 {
 	std::ifstream nodefile(blkTrs);
 	std::string addr1, addr2;
 	int value;
+	
+	std::vector<transaction>transactionList;
 	while (nodefile >> addr1 >> addr2 >> value)
 	{
-		node newNode = calculateNodeToRoute();
+		std::string key;
+		for (int i = 0; i < this->ent.size(); i++)
+		{
+			if (addr1 == this->ent[i].returnAddr())
+			{
+				key = this->ent[i].returnKey();
+			}
+		}
+		transaction newTansaction(addr1, addr2, key, value);
+		transactionList.push_back(newTansaction);
 	}
+	Cblock newBlock(transactionList);
+	return newBlock;
 }
 
 void ATMBlockChainSystem::createNodesAndWorkers(std::string nodeFile)

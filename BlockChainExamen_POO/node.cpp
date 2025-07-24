@@ -15,8 +15,15 @@ int node::returnWorkersEfficiency()
 	return sum;
 }
 
-void node::createTransaction(std::string addr1, std::string addr2, int value)
+void node::printInfo()
 {
-	//transaction newTR(addr1, addr2, key, value);
-	//TO DO  !!!!!!!!!!!!!!!!!!!!!!!
+	std::cout << "Node:" << this->nodeNumber << std::endl;
+	std::cout << this->timer << std::endl;
+	for (int i = 0; i < this->workers.size(); i++)
+	{
+		this->workers[i]->printInfo();
+		std::cout << std::endl;
+	}
+
 }
+

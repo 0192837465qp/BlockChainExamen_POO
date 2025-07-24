@@ -16,6 +16,7 @@ public:
 		generateKey();
 	}
 
-
+	std::string returnAddr();
+	std::string returnKey();
 };
 

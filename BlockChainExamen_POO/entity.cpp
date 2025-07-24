@@ -13,3 +13,13 @@ void entity::printEntity()
 {
 	std::cout << this->address << "\n" << this->key;
 }
+
+std::string entity::returnAddr()
+{
+	return this->address;
+}
+
+std::string entity::returnKey()
+{
+	return this->key;
+}

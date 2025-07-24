@@ -1,7 +1,12 @@
 #include <iostream>
+#include"ATMBlockChainSystem.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+    ATMBlockChainSystem system;
+    
+    system.processTansactions("transactions.txt");
+    system.processEntity("entity.txt");
+    return 0;
 }
 

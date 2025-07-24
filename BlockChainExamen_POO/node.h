@@ -23,6 +23,6 @@ public:
 		workers.push_back(new ASICworker(process, consumption));
 	}
 	int returnWorkersEfficiency();
-	void createTransaction(std::string addr1,std::string addr2,int value);
+	void printInfo();
 };
 

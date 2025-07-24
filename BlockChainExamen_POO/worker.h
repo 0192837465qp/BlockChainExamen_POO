@@ -16,5 +16,6 @@ public:
 	void setPowerConsumption(int a)override;
 	void setProcessingrate(int a)override;
 	int returnDiff()override;
+	void printInfo()override;
 };
 

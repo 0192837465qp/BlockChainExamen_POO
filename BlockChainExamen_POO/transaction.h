@@ -17,6 +17,6 @@ public:
 		comission = int(value / 100);
 		sumaControl = (stoi(addrSender) + stoi(addrReceiver) + val + (comission)) % (stoi(senderKey));
 	}
-
+	void printInfo()override;
 };
 

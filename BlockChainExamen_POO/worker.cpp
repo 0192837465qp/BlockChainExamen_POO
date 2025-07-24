@@ -25,4 +25,9 @@ int worker::returnDiff()
 	return this->rataProcesare-this->rataConsum;
 }
 
+void worker::printInfo()
+{
+	std::cout << this->rataConsum << " - " << this->rataProcesare << std::endl;
+}
+
 

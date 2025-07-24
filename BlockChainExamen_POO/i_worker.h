@@ -10,5 +10,6 @@ public:
 	virtual void setPowerConsumption(int a) = 0;
 	virtual void setProcessingrate(int a) = 0;
 	virtual int returnDiff() = 0;
+	virtual void printInfo() = 0;
 };
 

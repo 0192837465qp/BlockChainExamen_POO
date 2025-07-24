@@ -10,5 +10,6 @@ private:
 	std::vector<Cblock>blockchain;
 public:
 	BlockChainData(){}
+	void addBlockToBlockchain(Cblock newBlock);
 };
 
